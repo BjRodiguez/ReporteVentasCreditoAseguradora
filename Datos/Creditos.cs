@@ -12,7 +12,7 @@ namespace Datos
 {
     public class Creditos
     {
-        public Task<DataSet> getVentasCredito(string SPCreditos, string fechaIn, string fechaFi)
+        public Task<DataSet> getVentasCredito(string SPCreditos, string fechaIn, string fechaFi, string nit)
         {
             return Task.Run(() => 
             {
@@ -31,6 +31,7 @@ namespace Datos
                             SqlDataAdapter DA = new SqlDataAdapter(command);
                             DA.SelectCommand.Parameters.AddWithValue("@FECHA_INI", fechaIn);
                             DA.SelectCommand.Parameters.AddWithValue("@FECHA_FIN", fechaFi);
+                            DA.SelectCommand.Parameters.AddWithValue("@NIT", nit);
                             DA.SelectCommand.CommandTimeout = 300;
                             DA.Fill(dataSet);
                             dataSet.Tables.Add(result);

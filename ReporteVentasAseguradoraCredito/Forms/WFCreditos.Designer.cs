@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WFCreditos));
             this.panelMenuCreditos = new System.Windows.Forms.Panel();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.lblMontoVenta = new System.Windows.Forms.Label();
             this.lblNoOrigen = new System.Windows.Forms.Label();
@@ -40,9 +42,7 @@
             this.lblReferencia = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.lblCreditos = new System.Windows.Forms.Label();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnGenerar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.fechaFin = new System.Windows.Forms.Label();
             this.fechaIni = new System.Windows.Forms.Label();
@@ -67,6 +67,8 @@
             this.lblTotalCreditos = new System.Windows.Forms.Label();
             this.lblTotalCliente = new System.Windows.Forms.Label();
             this.dgvDetalleCreditos = new System.Windows.Forms.DataGridView();
+            this.lblNit = new System.Windows.Forms.Label();
+            this.txtNitCredito = new System.Windows.Forms.TextBox();
             this.panelMenuCreditos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panelBodyCreditos.SuspendLayout();
@@ -82,6 +84,8 @@
             // 
             this.panelMenuCreditos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.panelMenuCreditos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenuCreditos.Controls.Add(this.lblNit);
+            this.panelMenuCreditos.Controls.Add(this.txtNitCredito);
             this.panelMenuCreditos.Controls.Add(this.btnGenerar);
             this.panelMenuCreditos.Controls.Add(this.btnExportar);
             this.panelMenuCreditos.Controls.Add(this.btnClose);
@@ -112,10 +116,48 @@
             this.panelMenuCreditos.Controls.Add(this.txtSerie);
             this.panelMenuCreditos.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenuCreditos.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenuCreditos.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenuCreditos.Name = "panelMenuCreditos";
             this.panelMenuCreditos.Size = new System.Drawing.Size(1924, 187);
             this.panelMenuCreditos.TabIndex = 0;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
+            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
+            this.btnGenerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.Color.White;
+            this.btnGenerar.Location = new System.Drawing.Point(1315, 31);
+            this.btnGenerar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(192, 49);
+            this.btnGenerar.TabIndex = 28;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
+            this.btnExportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.Location = new System.Drawing.Point(1516, 30);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(192, 49);
+            this.btnExportar.TabIndex = 30;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnClose
             // 
@@ -125,7 +167,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(1805, 30);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(43, 33);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -242,60 +284,22 @@
             this.lblCreditos.TabIndex = 32;
             this.lblCreditos.Text = "CRÉDITOS";
             // 
-            // btnExportar
-            // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
-            this.btnExportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(1516, 30);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(192, 49);
-            this.btnExportar.TabIndex = 30;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Location = new System.Drawing.Point(1516, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(192, 32);
             this.panel2.TabIndex = 31;
-            // 
-            // btnGenerar
-            // 
-            this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
-            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(88)))));
-            this.btnGenerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Location = new System.Drawing.Point(1315, 31);
-            this.btnGenerar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(192, 49);
-            this.btnGenerar.TabIndex = 28;
-            this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = false;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Location = new System.Drawing.Point(1315, 50);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(192, 32);
             this.panel1.TabIndex = 29;
@@ -358,7 +362,7 @@
             // 
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEndDate.Location = new System.Drawing.Point(276, 38);
-            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(140, 22);
             this.dtpEndDate.TabIndex = 23;
@@ -368,7 +372,7 @@
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStartDate.Location = new System.Drawing.Point(55, 38);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(140, 22);
             this.dtpStartDate.TabIndex = 22;
@@ -379,7 +383,7 @@
             this.txtSerieOrigen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSerieOrigen.ForeColor = System.Drawing.Color.Black;
             this.txtSerieOrigen.Location = new System.Drawing.Point(988, 130);
-            this.txtSerieOrigen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSerieOrigen.Margin = new System.Windows.Forms.Padding(4);
             this.txtSerieOrigen.MaxLength = 5;
             this.txtSerieOrigen.Name = "txtSerieOrigen";
             this.txtSerieOrigen.Size = new System.Drawing.Size(177, 34);
@@ -392,7 +396,7 @@
             this.txtNumeroOrigen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroOrigen.ForeColor = System.Drawing.Color.Black;
             this.txtNumeroOrigen.Location = new System.Drawing.Point(1175, 130);
-            this.txtNumeroOrigen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroOrigen.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroOrigen.MaxLength = 8;
             this.txtNumeroOrigen.Name = "txtNumeroOrigen";
             this.txtNumeroOrigen.Size = new System.Drawing.Size(177, 34);
@@ -405,7 +409,7 @@
             this.txtMontoVenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMontoVenta.ForeColor = System.Drawing.Color.Black;
             this.txtMontoVenta.Location = new System.Drawing.Point(1361, 130);
-            this.txtMontoVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontoVenta.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoVenta.MaxLength = 8;
             this.txtMontoVenta.Name = "txtMontoVenta";
             this.txtMontoVenta.Size = new System.Drawing.Size(177, 34);
@@ -418,7 +422,7 @@
             this.txtRefencia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRefencia.ForeColor = System.Drawing.Color.Black;
             this.txtRefencia.Location = new System.Drawing.Point(241, 130);
-            this.txtRefencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRefencia.Margin = new System.Windows.Forms.Padding(4);
             this.txtRefencia.MaxLength = 10;
             this.txtRefencia.Name = "txtRefencia";
             this.txtRefencia.Size = new System.Drawing.Size(177, 34);
@@ -431,7 +435,7 @@
             this.txtNoFel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoFel.ForeColor = System.Drawing.Color.Black;
             this.txtNoFel.Location = new System.Drawing.Point(430, 130);
-            this.txtNoFel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNoFel.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoFel.MaxLength = 10;
             this.txtNoFel.Name = "txtNoFel";
             this.txtNoFel.Size = new System.Drawing.Size(177, 34);
@@ -444,7 +448,7 @@
             this.txtNombreCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCliente.ForeColor = System.Drawing.Color.Black;
             this.txtNombreCliente.Location = new System.Drawing.Point(615, 130);
-            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreCliente.MaxLength = 50;
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(177, 34);
@@ -457,7 +461,7 @@
             this.txtConvenio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConvenio.ForeColor = System.Drawing.Color.Black;
             this.txtConvenio.Location = new System.Drawing.Point(801, 130);
-            this.txtConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConvenio.Margin = new System.Windows.Forms.Padding(4);
             this.txtConvenio.MaxLength = 8;
             this.txtConvenio.Name = "txtConvenio";
             this.txtConvenio.Size = new System.Drawing.Size(177, 34);
@@ -470,7 +474,7 @@
             this.txtSerie.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSerie.ForeColor = System.Drawing.Color.Black;
             this.txtSerie.Location = new System.Drawing.Point(51, 130);
-            this.txtSerie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSerie.Margin = new System.Windows.Forms.Padding(4);
             this.txtSerie.MaxLength = 9;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(177, 34);
@@ -485,7 +489,7 @@
             this.panelBodyCreditos.Controls.Add(this.gbDetalleCreditos);
             this.panelBodyCreditos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBodyCreditos.Location = new System.Drawing.Point(0, 187);
-            this.panelBodyCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBodyCreditos.Margin = new System.Windows.Forms.Padding(4);
             this.panelBodyCreditos.Name = "panelBodyCreditos";
             this.panelBodyCreditos.Size = new System.Drawing.Size(1924, 657);
             this.panelBodyCreditos.TabIndex = 1;
@@ -496,7 +500,7 @@
             this.loadExport.BackColor = System.Drawing.Color.White;
             this.loadExport.Image = ((System.Drawing.Image)(resources.GetObject("loadExport.Image")));
             this.loadExport.Location = new System.Drawing.Point(1493, 342);
-            this.loadExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loadExport.Margin = new System.Windows.Forms.Padding(4);
             this.loadExport.Name = "loadExport";
             this.loadExport.Size = new System.Drawing.Size(157, 105);
             this.loadExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -510,9 +514,9 @@
             this.gbConsolidadoCreditos.Controls.Add(this.dgvConsolidado);
             this.gbConsolidadoCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbConsolidadoCreditos.Location = new System.Drawing.Point(1331, 7);
-            this.gbConsolidadoCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbConsolidadoCreditos.Margin = new System.Windows.Forms.Padding(4);
             this.gbConsolidadoCreditos.Name = "gbConsolidadoCreditos";
-            this.gbConsolidadoCreditos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbConsolidadoCreditos.Padding = new System.Windows.Forms.Padding(4);
             this.gbConsolidadoCreditos.Size = new System.Drawing.Size(559, 235);
             this.gbConsolidadoCreditos.TabIndex = 1;
             this.gbConsolidadoCreditos.TabStop = false;
@@ -525,7 +529,7 @@
             this.dgvConsolidado.BackgroundColor = System.Drawing.Color.White;
             this.dgvConsolidado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsolidado.Location = new System.Drawing.Point(8, 31);
-            this.dgvConsolidado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvConsolidado.Margin = new System.Windows.Forms.Padding(4);
             this.dgvConsolidado.Name = "dgvConsolidado";
             this.dgvConsolidado.ReadOnly = true;
             this.dgvConsolidado.Size = new System.Drawing.Size(543, 185);
@@ -542,9 +546,9 @@
             this.gbDetalleCreditos.Controls.Add(this.dgvDetalleCreditos);
             this.gbDetalleCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDetalleCreditos.Location = new System.Drawing.Point(16, 7);
-            this.gbDetalleCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDetalleCreditos.Margin = new System.Windows.Forms.Padding(4);
             this.gbDetalleCreditos.Name = "gbDetalleCreditos";
-            this.gbDetalleCreditos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDetalleCreditos.Padding = new System.Windows.Forms.Padding(4);
             this.gbDetalleCreditos.Size = new System.Drawing.Size(1307, 622);
             this.gbDetalleCreditos.TabIndex = 0;
             this.gbDetalleCreditos.TabStop = false;
@@ -555,7 +559,7 @@
             this.loadDetalle.BackColor = System.Drawing.Color.White;
             this.loadDetalle.Image = ((System.Drawing.Image)(resources.GetObject("loadDetalle.Image")));
             this.loadDetalle.Location = new System.Drawing.Point(545, 240);
-            this.loadDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loadDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.loadDetalle.Name = "loadDetalle";
             this.loadDetalle.Size = new System.Drawing.Size(157, 134);
             this.loadDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -594,11 +598,35 @@
             this.dgvDetalleCreditos.BackgroundColor = System.Drawing.Color.White;
             this.dgvDetalleCreditos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleCreditos.Location = new System.Drawing.Point(8, 31);
-            this.dgvDetalleCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetalleCreditos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalleCreditos.Name = "dgvDetalleCreditos";
             this.dgvDetalleCreditos.ReadOnly = true;
             this.dgvDetalleCreditos.Size = new System.Drawing.Size(1291, 544);
             this.dgvDetalleCreditos.TabIndex = 0;
+            // 
+            // lblNit
+            // 
+            this.lblNit.AutoSize = true;
+            this.lblNit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNit.ForeColor = System.Drawing.Color.White;
+            this.lblNit.Location = new System.Drawing.Point(463, 14);
+            this.lblNit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNit.Name = "lblNit";
+            this.lblNit.Size = new System.Drawing.Size(41, 23);
+            this.lblNit.TabIndex = 43;
+            this.lblNit.Text = "NIT:";
+            // 
+            // txtNitCredito
+            // 
+            this.txtNitCredito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNitCredito.ForeColor = System.Drawing.Color.Black;
+            this.txtNitCredito.Location = new System.Drawing.Point(467, 40);
+            this.txtNitCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNitCredito.MaxLength = 10;
+            this.txtNitCredito.Name = "txtNitCredito";
+            this.txtNitCredito.Size = new System.Drawing.Size(175, 34);
+            this.txtNitCredito.TabIndex = 42;
+            this.txtNitCredito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNitCredito_KeyPress);
             // 
             // WFCreditos
             // 
@@ -607,7 +635,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 844);
             this.Controls.Add(this.panelBodyCreditos);
             this.Controls.Add(this.panelMenuCreditos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WFCreditos";
             this.Text = "WFCreditos";
             this.Load += new System.EventHandler(this.WFCreditos_Load);
@@ -666,5 +694,7 @@
         private System.Windows.Forms.Label lblReferencia;
         private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.PictureBox btnClose;
+        private System.Windows.Forms.Label lblNit;
+        private System.Windows.Forms.TextBox txtNitCredito;
     }
 }

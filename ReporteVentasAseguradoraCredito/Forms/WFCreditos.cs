@@ -56,9 +56,10 @@ namespace ReporteVentasAseguradoraCredito.Forms
 
             var fechaInicio = dtpStartDate.Value.Date.ToString("yyyyMMdd");
             var fechaFinal = dtpEndDate.Value.Date.ToString("yyyyMMdd");
+            var nit = txtNitCredito.Text.Trim();
 
             Creditos creditos = new Creditos();
-            DataSet data = await creditos.getVentasCredito("USP_CAC_GET_VENTAS_CREDITOS", fechaInicio, fechaFinal);
+            DataSet data = await creditos.getVentasCredito("USP_CAC_GET_VENTAS_CREDITOS", fechaInicio, fechaFinal, nit);
 
             dt = data.Tables[0];
             temporal = data.Tables[0];
@@ -252,6 +253,23 @@ namespace ReporteVentasAseguradoraCredito.Forms
             {
                 error.Clear();
             }
+        }
+
+        private async void txtNitCredito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 44) || (e.KeyChar >= 46 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 106) || (e.KeyChar >= 108 && e.KeyChar <= 255))
+            {
+                error.SetError(txtNitCredito, "Ingrese un nit valido");
+                e.Handled = true;
+            }
+            else if (e.KeyChar == 13)
+            {
+                loadDetalle.Visible = true;
+                await getVentasCredito();
+                loadDetalle.Visible = false;
+            }
+            else
+                error.Clear();
         }
         #endregion
 
@@ -475,9 +493,15 @@ namespace ReporteVentasAseguradoraCredito.Forms
 
         private async void btnGenerar_Click(object sender, EventArgs e)
         {
-            loadDetalle.Visible = true;
-            await getVentasCredito();
-            loadDetalle.Visible = false;
+            if (txtNitCredito.Text != "")
+            {
+                loadDetalle.Visible = true;
+                await getVentasCredito();
+                loadDetalle.Visible = false;
+            }
+            else
+                error.SetError(txtNitCredito, "ingrese Nit");
+            
         }
 
         private async void btnExportar_Click(object sender, EventArgs e)

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WFCreditos));
             this.panelMenuCreditos = new System.Windows.Forms.Panel();
+            this.lblNit = new System.Windows.Forms.Label();
+            this.txtNitCredito = new System.Windows.Forms.TextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.PictureBox();
@@ -67,8 +69,6 @@
             this.lblTotalCreditos = new System.Windows.Forms.Label();
             this.lblTotalCliente = new System.Windows.Forms.Label();
             this.dgvDetalleCreditos = new System.Windows.Forms.DataGridView();
-            this.lblNit = new System.Windows.Forms.Label();
-            this.txtNitCredito = new System.Windows.Forms.TextBox();
             this.panelMenuCreditos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panelBodyCreditos.SuspendLayout();
@@ -120,6 +120,30 @@
             this.panelMenuCreditos.Name = "panelMenuCreditos";
             this.panelMenuCreditos.Size = new System.Drawing.Size(1924, 187);
             this.panelMenuCreditos.TabIndex = 0;
+            // 
+            // lblNit
+            // 
+            this.lblNit.AutoSize = true;
+            this.lblNit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNit.ForeColor = System.Drawing.Color.White;
+            this.lblNit.Location = new System.Drawing.Point(463, 14);
+            this.lblNit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNit.Name = "lblNit";
+            this.lblNit.Size = new System.Drawing.Size(41, 23);
+            this.lblNit.TabIndex = 43;
+            this.lblNit.Text = "NIT:";
+            // 
+            // txtNitCredito
+            // 
+            this.txtNitCredito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNitCredito.ForeColor = System.Drawing.Color.Black;
+            this.txtNitCredito.Location = new System.Drawing.Point(467, 40);
+            this.txtNitCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNitCredito.MaxLength = 10;
+            this.txtNitCredito.Name = "txtNitCredito";
+            this.txtNitCredito.Size = new System.Drawing.Size(175, 34);
+            this.txtNitCredito.TabIndex = 42;
+            this.txtNitCredito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNitCredito_KeyPress);
             // 
             // btnGenerar
             // 
@@ -183,9 +207,9 @@
             this.lblMontoVenta.Location = new System.Drawing.Point(1357, 106);
             this.lblMontoVenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontoVenta.Name = "lblMontoVenta";
-            this.lblMontoVenta.Size = new System.Drawing.Size(175, 20);
+            this.lblMontoVenta.Size = new System.Drawing.Size(124, 20);
             this.lblMontoVenta.TabIndex = 40;
-            this.lblMontoVenta.Text = "MONTO ASEGURADORA:";
+            this.lblMontoVenta.Text = "MONTO CLIENTE:";
             // 
             // lblNoOrigen
             // 
@@ -243,9 +267,9 @@
             this.lblNoFel.Location = new System.Drawing.Point(424, 106);
             this.lblNoFel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoFel.Name = "lblNoFel";
-            this.lblNoFel.Size = new System.Drawing.Size(171, 20);
+            this.lblNoFel.Size = new System.Drawing.Size(120, 20);
             this.lblNoFel.TabIndex = 35;
-            this.lblNoFel.Text = "No. FEL ASEGURADORA:";
+            this.lblNoFel.Text = "No. FEL CLIENTE:";
             // 
             // lblReferencia
             // 
@@ -255,9 +279,9 @@
             this.lblReferencia.Location = new System.Drawing.Point(237, 106);
             this.lblReferencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(122, 20);
+            this.lblReferencia.Size = new System.Drawing.Size(94, 20);
             this.lblReferencia.TabIndex = 34;
-            this.lblReferencia.Text = "No. REFERENCIA:";
+            this.lblReferencia.Text = "No. CLIENTE:";
             // 
             // lblSerie
             // 
@@ -267,9 +291,9 @@
             this.lblSerie.Location = new System.Drawing.Point(51, 106);
             this.lblSerie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(49, 20);
+            this.lblSerie.Size = new System.Drawing.Size(108, 20);
             this.lblSerie.TabIndex = 33;
-            this.lblSerie.Text = "SERIE:";
+            this.lblSerie.Text = "SERIE CLIENTE:";
             // 
             // lblCreditos
             // 
@@ -603,30 +627,6 @@
             this.dgvDetalleCreditos.ReadOnly = true;
             this.dgvDetalleCreditos.Size = new System.Drawing.Size(1291, 544);
             this.dgvDetalleCreditos.TabIndex = 0;
-            // 
-            // lblNit
-            // 
-            this.lblNit.AutoSize = true;
-            this.lblNit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNit.ForeColor = System.Drawing.Color.White;
-            this.lblNit.Location = new System.Drawing.Point(463, 14);
-            this.lblNit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNit.Name = "lblNit";
-            this.lblNit.Size = new System.Drawing.Size(41, 23);
-            this.lblNit.TabIndex = 43;
-            this.lblNit.Text = "NIT:";
-            // 
-            // txtNitCredito
-            // 
-            this.txtNitCredito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNitCredito.ForeColor = System.Drawing.Color.Black;
-            this.txtNitCredito.Location = new System.Drawing.Point(467, 40);
-            this.txtNitCredito.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNitCredito.MaxLength = 10;
-            this.txtNitCredito.Name = "txtNitCredito";
-            this.txtNitCredito.Size = new System.Drawing.Size(175, 34);
-            this.txtNitCredito.TabIndex = 42;
-            this.txtNitCredito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNitCredito_KeyPress);
             // 
             // WFCreditos
             // 

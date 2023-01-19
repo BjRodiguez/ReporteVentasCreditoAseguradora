@@ -73,9 +73,9 @@ namespace ReporteVentasAseguradoraCredito.Forms
                 int c = dgvDetalle.Rows.Count;
                 for (int i = 0; i < c; i++)
                 {
-                    var nc = dgvDetalle.Rows[i].Cells[11].Value.ToString();
-                    var na = dgvDetalle.Rows[i].Cells[11].Value.ToString();
-                    var fc = dgvDetalle.Rows[i].Cells[26].Value.ToString();
+                    var nc = dgvDetalle.Rows[i].Cells[4].Value.ToString();
+                    var na = dgvDetalle.Rows[i].Cells[4].Value.ToString();
+                    var fc = dgvDetalle.Rows[i].Cells[33].Value.ToString();
 
                     if (nc == "4" || na == "5" || fc == "0")
                     {
@@ -147,9 +147,9 @@ namespace ReporteVentasAseguradoraCredito.Forms
             int c = dgvDetalle.Rows.Count;
             for (int i = 0; i < c; i++)
             {
-                var nc = dgvDetalle.Rows[i].Cells[11].Value.ToString();
-                var na = dgvDetalle.Rows[i].Cells[11].Value.ToString();
-                var fc = dgvDetalle.Rows[i].Cells[26].Value.ToString();
+                var nc = dgvDetalle.Rows[i].Cells[5].Value.ToString();
+                var na = dgvDetalle.Rows[i].Cells[5].Value.ToString();
+                var fc = dgvDetalle.Rows[i].Cells[33].Value.ToString();
 
                 if (nc == "4" || na == "5" || fc == "0")
                 {
@@ -297,14 +297,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (dt.Rows.Count > 0)
             {
-                error.Clear();
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -325,13 +324,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -352,13 +351,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -379,13 +378,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -406,13 +405,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -433,13 +432,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -460,13 +459,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
@@ -487,13 +486,13 @@ namespace ReporteVentasAseguradoraCredito.Forms
         {
             if (temporal.Rows.Count > 0)
             {
-                dt.DefaultView.RowFilter = string.Format(@"[Serie Aseguradora] LIKE '%{0}%' AND [Numero Aseguradora] LIKE '%{1}%' 
-                                                                                AND [Numero Fel Asegu] LIKE '%{2}%'
+                dt.DefaultView.RowFilter = string.Format(@"[Serie Cliente] LIKE '%{0}%' AND [Numero Cliente] LIKE '%{1}%' 
+                                                                                AND [Numero Fel Cliente] LIKE '%{2}%'
                                                                                 AND [Nombre Cliente] LIKE '%{3}%'
                                                                                 AND [Convenio] LIKE '%{4}%'
-                                                                                AND [Serie Origen Asegu] LIKE '%{5}%'
-                                                                                AND [Numero Origen Asegu] LIKE '%{6}%'
-                                                                                AND [Total Aseguradora] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
+                                                                                AND [Serie Org Cliente] LIKE '%{5}%'
+                                                                                AND [Numero Org Cliente] LIKE '%{6}%'
+                                                                                AND [Total Cliente] LIKE '%{7}%'", txtSerie.Text.ToUpper().Trim()
                                                                                 , txtRefencia.Text.Trim()
                                                                                 , txtNoFel.Text.Trim()
                                                                                 , txtNombreCliente.Text.ToUpper().Trim()
